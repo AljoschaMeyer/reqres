@@ -2,6 +2,8 @@
 
 A minimalistic request-response specification.
 
+**Status: freshly specified, needs more time before it can be declared stable.**
+
 ## What, Why, and How?
 
 This specification deals with some design issues of request-response protocols over a reliable, ordered, byte oriented channel, namely the mapping from responses to concurrent requests, and flow control. Many request-response-based protocols neglect flow control, leading either to exhaustion of computational resources, or delay in transmitting some responses just because a completely unrelated resource is currently unavailable.
