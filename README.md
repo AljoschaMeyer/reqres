@@ -10,7 +10,7 @@ This specification deals with some design issues of request-response protocols o
 
 Reqres is an asymmetric protocol; the *client* endpoint issues *requests*, and the *server* endpoint serves *responses* - you can emulate a symmetric session by running two reqres sessions in parallel. When issuing a request, the client annotates it with a 64-bit integer, the *request id*. Each response is annotated with the id of the request to which it pertains.
 
-Flow control is based on a credit-based scheme, very similar to that of [minmux](https://github.com/AljoschaMeyer/minmux). The remainder of this text assumes familiarity with the [minmux](https://github.com/AljoschaMeyer/minmux) specification. Like [minmux](https://github.com/AljoschaMeyer/minmux), a reqres session consists of exchanging different packet, each consisting of a light header followed by packet-specific data.
+Flow control is based on a credit-based scheme, very similar to that of [minmux](https://github.com/AljoschaMeyer/minmux). The remainder of this text assumes familiarity with the [minmux](https://github.com/AljoschaMeyer/minmux) specification. Like [minmux](https://github.com/AljoschaMeyer/minmux), a reqres session consists of exchanging different packets, each consisting of a light header followed by packet-specific data.
 
 The specifics of the flow control mechanism employed by reqres depend on whether requests and/or responses are of a static size, or whether any (and which) of them include streaming data of arbitrary length. Reqres is actually a family of four related protocols, one protocol for each combination of static or streaming requests or responses.
 
